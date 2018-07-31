@@ -1,4 +1,5 @@
 // Determine if it is a valid binary search tree
+// https://leetcode.com/problems/validate-binary-search-tree/description/
 public class ValidataBST extends Tree {
 
 	public static void main(String[] args) {
@@ -14,11 +15,9 @@ public class ValidataBST extends Tree {
 		
 		if (root == null)
 			return true;
-		//System.out.println("Root value is " +root.value + " lowerbound is "+lowerBound +" upperbound is "+UpperBound);
-		
+			
 		if ((root.getValue() < lowerBound) || (root.getValue() > UpperBound))
 			return false;
-
 
 		return (Validate(root.getLeft(),lowerBound, root.getValue()) 
 				&& Validate(root.getRight(), root.getValue(), UpperBound));
