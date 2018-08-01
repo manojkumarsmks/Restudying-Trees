@@ -88,11 +88,23 @@ public class Tree {
 	
 	public Node TreeExample() {
 		
-		Node root = new Node(1);
+		Node root = new Node(10);
 		
-		root.setLeft(new Node(1));
+		root.left = new Node(12);
+		
+		root.right = new Node(15);
+		
+		root.left.left = new Node(25);
+		root.left.right = new Node(30);
+		root.left.right.left = new Node(8);
+		root.left.right.left.left = new Node(5);
+		root.left.right.left.left.right = new Node(1);
+		
+		root.right.left = new Node(36);
+		root.right.left.right = new Node(244);
 		
 		return root;
+		
 		
 	}
 	
