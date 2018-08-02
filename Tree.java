@@ -1,10 +1,13 @@
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 // Tree Re-Studying
 public class Tree {
 
 	public static void main(String[] args) {
-
+		Tree tree = new Tree();
+		tree.InOrderIterative(tree.TreeExample());
 	}
 //-------------------------------------------------------------------------------------------	
 	// Pre-Order Traversal
@@ -83,6 +86,31 @@ public class Tree {
 		}
 		
 	}
+	
+	
+//-------------------------------------------------------------------------------------------
+	//
+	
+	public void LevelOrderTraversal(Node root) {
+		if(root == null)
+			return;
+		
+		Queue<Node> queue = new LinkedList<>();
+		queue.add(root);
+		
+		while(!queue.isEmpty()) {
+			Node temp = queue.poll();
+			
+			System.out.println(temp.value);
+			
+			if(temp.left  != null)
+				queue.add(temp.left);
+			
+			if(temp.right != null)
+				queue.add(temp.right);			
+		}
+		
+	}
 //-------------------------------------------------------------------------------------------
 	// Tree example
 	
@@ -98,15 +126,42 @@ public class Tree {
 		root.left.right = new Node(30);
 		root.left.right.left = new Node(8);
 		root.left.right.left.left = new Node(5);
-		root.left.right.left.left.right = new Node(1);
 		
 		root.right.left = new Node(36);
+		root.right.right = new Node(1);
 		root.right.left.right = new Node(244);
 		
 		return root;
-		
-		
 	}
+	
+	
+	// Tree Example 1
+	
+	public Node Example1() {
+		Node root = new Node(1);
+		
+		root.left = new Node(3);
+		root.left = new Node(2);
+		root.left.left = new Node(5);
+		
+		return root;
+	}
+	
+	// Tree Example 1
+	
+	public Node Example2() {
+		Node root = new Node(2);
+		
+		root.left = new Node(1);
+		root.right = new Node(3);
+		root.left.right = new Node(4);
+		root.right.right = new Node(7);
+		
+		return root;
+	}
+	
+	
+	
 	
 
 }

@@ -18,33 +18,23 @@ public class Zigzag extends Tree{
 		
 		Stack<Node> stack = new Stack<Node>();
 		Queue<Node> queue = new LinkedList<>();
-		
+		boolean deciderFlag = false;
 		
 		if(root != null)
 			//queue.add(root);
 			stack.push(root);
 		
 		List<Node> list = new ArrayList<Node>();
+		stack.add(root);
 		
-		while(!stack.isEmpty()) {
-			while(!stack.isEmpty()) {
+		while(true) {
+			
+			while(!stack.isEmpty())
 				list.add(stack.pop());
+			
+			if(!deciderFlag) {
+
 			}
-			
-			for (int i = 0; i < list.size(); i++) {
-				Node temp = list.get(i);
-				System.out.print(list.get(i).value + "  ");
-				
-				if(temp.left != null)
-					stack.push(temp.left);	
-				if(temp.right != null)
-					stack.push(temp.right);
-				
-			}
-			
-			list.clear();
-			
-			System.out.println();
 			
 		}
 	}
