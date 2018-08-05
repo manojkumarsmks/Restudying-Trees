@@ -138,11 +138,12 @@ public class Tree {
 	// Tree Example 1
 	
 	public Node Example1() {
-		Node root = new Node(1);
+		Node root = new Node(3);
 		
-		root.left = new Node(3);
-		root.right = new Node(2);
-		root.left.left = new Node(5);
+		root.left = new Node(9);
+		root.right = new Node(20);
+		root.right.left = new Node(15);
+		root.right.right = new Node(7);
 		
 		return root;
 	}
